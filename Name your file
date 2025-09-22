@@ -1,1 +1,24 @@
-app/auth.py
+# app/auth.py
+import bcrypt
+
+# Usuário padrão (exemplo). Troque/expanda para um DB real depois.
+USERS = {
+    "leonardo": {
+        "full_name": "Leonardo Lopes de Souza",
+        "email": "leonardolopesesouza@gmail.com",
+        # Senha: Ked0724%@c -> já será armazenada como hash
+        "password_hash": bcrypt.hashpw("Ked0724%@c".encode(), bcrypt.gensalt()).decode()
+    }
+}
+
+def verify_user(username: str, password: str):
+    """Retorna o usuário (dict) se a senha estiver correta, senão None."""
+    user = USERS.get(username)
+    if not user:
+        return None
+    try:
+        if bcrypt.checkpw(password.encode(), user["password_hash"].encode()):
+            return user
+    except Exception:
+        return None
+    return None
