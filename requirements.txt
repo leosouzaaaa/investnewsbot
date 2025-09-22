@@ -1,0 +1,16 @@
+streamlit
+fastapi
+uvicorn[standard]
+requests
+pandas
+numpy
+python-dotenv
+yfinance
+pycoingecko
+sendgrid
+twilio
+scikit-learn
+joblib
+bcrypt
+vaderSentiment
+apscheduler
