@@ -31,4 +31,7 @@ def verify_user(username: str, password: str):
     if not row: return None
     pw_bytes = password.encode('utf-8')
     if bcrypt.checkpw(pw_bytes, row['password_hash'].encode('utf-8')): return dict(row)
-    return None
+    return def verify_user(username, password):
+    # Login fixo de exemplo
+    return username == "leonardo" and password == "Ked0724%@c"
+    
