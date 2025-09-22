@@ -1,0 +1,20 @@
+import bcrypt
+
+# Usuário padrão (você pode mudar depois para usar banco de dados)
+USERS = {
+    "leonardo": {
+        "full_name": "Leonardo Lopes de Souza",
+        "email": "leonardolopesesouza@gmail.com",
+        "password_hash": bcrypt.hashpw("Ked0724%@c".encode(), bcrypt.gensalt()).decode()
+    }
+}
+
+def verify_user(username: str, password: str):
+    """Verifica se o usuário e senha estão corretos."""
+    user = USERS.get(username)
+    if not user:
+        return None
+
+    if bcrypt.checkpw(password.encode(), user["password_hash"].encode()):
+        return user
+    return None
