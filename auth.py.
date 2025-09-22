@@ -1,0 +1,3 @@
+def verify_user(username, password):
+    # Login fixo de exemplo
+    return username == "leonardo" and password == "Ked0724%@c"
