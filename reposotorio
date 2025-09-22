@@ -1,0 +1,9 @@
+investnewsbot/
+│
+├── app/
+│   ├── __init__.py
+│   ├── auth.py
+│
+├── api.py
+├── web_ui.py
+├── requirements.txt
